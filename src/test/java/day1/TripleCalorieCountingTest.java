@@ -1,4 +1,5 @@
-import day1.TripleCalorieCounting;
+package day1;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
