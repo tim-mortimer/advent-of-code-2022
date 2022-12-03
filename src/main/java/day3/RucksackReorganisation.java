@@ -61,19 +61,15 @@ public class RucksackReorganisation {
                                 return charSet;
                             })
                             .toList())
-                    .peek(System.out::println)
                     .map(setList -> {
                         setList.get(0).retainAll(setList.get(1));
                         setList.get(0).retainAll(setList.get(2));
                         return setList.get(0);
                     })
-                    .peek(System.out::println)
                     .map(setList -> setList.stream().toList().get(0))
-                    .peek(System.out::println)
                     .map(Priority::of)
                     .map(Priority::value)
                     .mapToInt(Integer::intValue)
-                    .peek(System.out::println)
                     .sum();
 
             System.out.println(result2);
