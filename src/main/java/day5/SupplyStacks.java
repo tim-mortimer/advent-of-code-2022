@@ -42,8 +42,15 @@ public class SupplyStacks {
                 int fromStack = Integer.parseInt(matcher.group(2));
                 int toStack = Integer.parseInt(matcher.group(3));
 
+                Stack<Character> holdingStack = new Stack<>();
+
                 for (int i = 0; i < quantityMoved; i++) {
                     Character poppedCharacter = stacks.get(fromStack - 1).pop();
+                    holdingStack.add(poppedCharacter);
+                }
+
+                for (int i = 0; i < quantityMoved; i++) {
+                    Character poppedCharacter = holdingStack.pop();
                     stacks.get(toStack - 1).add(poppedCharacter);
                 }
             }
